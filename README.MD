@@ -16,6 +16,8 @@ javac -d objects/prod -classpath objects/prod ../mDNSShared/Java/*.java
 
 Executing Java program that use the library, need to include the classpath of jar library (-classpath), and the library libjdns_sd.so (using java.library.path).
 
+JavaDoc: https://petretiandrea.github.io/mDNSResponder/
+
 What is mDNSResponder?
 ----------------------
 
