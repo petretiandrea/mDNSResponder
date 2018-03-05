@@ -1,3 +1,16 @@
+#### Compile for Java and Posix
+For generate Posix binaries:
+```` 
+cd mDNSPosix
+make os=linux install
+````
+For generare Java jar library:
+````
+cd mDNSPosix
+make os=linux Java
+````
+Executing Java program that use the library, need to include the classpath of jar library (-classpath), and the library libjdns_sd.so (using java.library.path).
+
 What is mDNSResponder?
 ----------------------
 
@@ -101,7 +114,7 @@ this code into their applications, since OS X provides a system service to
 handle this for them. If every application developer were to link-in the
 mDNSResponder code into their application, then we would end up with a
 situation like the picture below:
-
+````
   +------------------+    +------------------+    +------------------+
   |   Application 1  |    |   Application 2  |    |   Application 3  |
   +------------------+    +------------------+    +------------------+
@@ -109,14 +122,14 @@ situation like the picture below:
   +------------------+    +------------------+    +------------------+
   | Platform Support |    | Platform Support |    | Platform Support |
   +------------------+    +------------------+    +------------------+
-
+````
 This would not be very efficient. Each separate application would be sending
 their own separate multicast UDP packets and maintaining their own list of
 answers. Because of this, OS X provides a common system service which client
 software should access through the "/usr/include/dns_sd.h" APIs.
 
 The situation on OS X looks more like the picture below:
-
+````
                                    -------------------
                                   /                   \
   +---------+    +------------------+    +---------+   \  +---------+
@@ -126,7 +139,7 @@ The situation on OS X looks more like the picture below:
                  +------------------+
                  | Platform Support |
                  +------------------+
-
+````
 Applications on OS X make calls to the single mDNSResponder daemon
 which implements the mDNS and DNS-SD protocols. 
 
