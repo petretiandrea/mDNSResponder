@@ -9,6 +9,11 @@ For generare Java jar library:
 cd mDNSPosix
 make os=linux Java
 ````
+N.B. For fix Java compilation using command "make os=linux Java", use before:
+````
+javac -d objects/prod -classpath objects/prod ../mDNSShared/Java/*.java
+````
+
 Executing Java program that use the library, need to include the classpath of jar library (-classpath), and the library libjdns_sd.so (using java.library.path).
 
 What is mDNSResponder?
