@@ -1,4 +1,9 @@
 #### Compile for Java and Posix
+Install all dependecies:
+````
+sudo apt-get install avahi-daemon avahi-discover libnss-mdns libavahi-compat-libdnssd-dev
+````
+
 For generate Posix binaries:
 ```` 
 cd mDNSPosix
